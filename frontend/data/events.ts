@@ -39,7 +39,7 @@ export const mockEvents: MockEvent[] = [
   },
   {
     id: 5,
-    title: "Vystavka Vin",
+    title: "Вистава 'ВІН'",
     date: "2026-04-11",
     location: "ZAG Lviv",
     category: "Мистецтво та театр",

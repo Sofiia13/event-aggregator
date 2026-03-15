@@ -1,7 +1,6 @@
 import { Button } from "@/components/Button";
-import { EventCard } from "@/components/EventCard";
+import { EventsList } from "@/components/EventsList";
 import { Header } from "@/components/Header";
-import { mockEvents } from "@/data/events";
 import { eventTypes } from "@/data/eventTypes";
 
 export default function Home() {
@@ -31,17 +30,8 @@ export default function Home() {
 
       <main className="text-foreground container mx-auto px-4 py-8">
         <h2 className="text-2xl font-bold mb-6">Найближчі події у Львові</h2>
-        <div>
-          {mockEvents.map((event) => (
-            <EventCard
-              key={event.id}
-              title={event.title}
-              date={event.date}
-              location={event.location}
-              category={event.category}
-            />
-          ))}
-        </div>
+
+        <EventsList />
       </main>
     </div>
   );

@@ -1,10 +1,12 @@
-import type { EventCategory } from "@/data/eventTypes";
+"use client";
+
+import { useRef, useState } from "react";
 
 type EventCardProps = {
   title: string;
   date: string;
   location: string;
-  category: EventCategory;
+  category: string;
 };
 
 export const EventCard = ({
@@ -13,20 +15,51 @@ export const EventCard = ({
   location,
   category,
 }: EventCardProps) => {
-  const styles: Record<EventCategory, string> = {
-    Музика: "bg-purple-100 border-l-4 border-purple-500 rounded-lg",
-    Спорт: "bg-green-100 border-l-4 border-green-500 rounded-lg",
-    "Мистецтво та театр":
-      "bg-red-100 border-dashed border-2 border-red-500 rounded-ticket",
-    Фестивалі: "bg-yellow-100 border-l-4 border-yellow-500 rounded-lg",
-    Технології: "bg-blue-100 border-l-4 border-blue-500 rounded-lg",
-  };
+  const divRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className={`p-6 shadow-md ${styles[category]}`}>
-      <h2 className="text-xl font-bold">{title}</h2>
-      <p className="text-gray-700">{date}</p>
-      <p className="text-gray-700">{location}</p>
+    <div
+      ref={divRef}
+      className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm"
+    >
+      <a href="#">
+        <img
+          className="rounded-t-lg w-96 h-56 object-cover object-top"
+          src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=800"
+          alt=""
+        />
+      </a>
+      <div className="p-5">
+        <a href="#">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+            {title}
+          </h5>
+        </a>
+        <p className="mb-3 font-mal text-gray-700">
+          {date} | {location} | {category}
+        </p>
+        <a
+          href="#"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-foreground rounded-lg hover:bg-indigo-600 focus:ring-4 focus:outline-none focus:ring-indigo-300"
+        >
+          Read more
+          <svg
+            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </a>
+      </div>
     </div>
   );
 };
