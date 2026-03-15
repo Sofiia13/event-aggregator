@@ -7,6 +7,7 @@ type EventCardProps = {
   date: string;
   location: string;
   category: string;
+  image: string;
 };
 
 export const EventCard = ({
@@ -14,6 +15,7 @@ export const EventCard = ({
   date,
   location,
   category,
+  image,
 }: EventCardProps) => {
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -25,8 +27,8 @@ export const EventCard = ({
       <a href="#">
         <img
           className="rounded-t-lg w-96 h-56 object-cover object-top"
-          src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=800"
-          alt=""
+          src={image}
+          alt={title}
         />
       </a>
       <div className="p-5">

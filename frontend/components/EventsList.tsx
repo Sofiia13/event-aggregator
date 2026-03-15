@@ -11,6 +11,7 @@ export const EventsList = () => {
           date={event.date}
           location={event.location}
           category={event.category}
+          image={event.image}
         />
       ))}
     </div>

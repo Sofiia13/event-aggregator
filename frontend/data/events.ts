@@ -6,6 +6,7 @@ type MockEvent = {
   date: string;
   location: string;
   category: EventCategory;
+  image: string;
 };
 
 export const mockEvents: MockEvent[] = [
@@ -15,6 +16,7 @@ export const mockEvents: MockEvent[] = [
     date: "2026-04-20",
     location: "Lviv Opera",
     category: "Музика",
+    image: "/musicEventImg.jpeg",
   },
   {
     id: 2,
@@ -22,13 +24,15 @@ export const mockEvents: MockEvent[] = [
     date: "2026-04-25",
     location: "Lviv IT Cluster",
     category: "Технології",
+    image: "/itEventImg.png",
   },
   {
     id: 3,
     title: "Tech Conference",
     date: "2026-05-10",
     location: "Lviv Convention Center",
-    category: "Музика",
+    category: "Технології",
+    image: "/itEventImg.png",
   },
   {
     id: 4,
@@ -36,6 +40,7 @@ export const mockEvents: MockEvent[] = [
     date: "2026-05-13",
     location: "Lviv Innovation Hub",
     category: "Фестивалі",
+    image: "/festival-img.jpg",
   },
   {
     id: 5,
@@ -43,5 +48,6 @@ export const mockEvents: MockEvent[] = [
     date: "2026-04-11",
     location: "ZAG Lviv",
     category: "Мистецтво та театр",
+    image: "/exhibitionEventImg.jpeg",
   },
 ];
