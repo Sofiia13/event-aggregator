@@ -1,7 +1,12 @@
+import { Button } from "./Button";
+
+
 export const Header = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center my-8">Event Aggregator</h1>
+    <div className="flex">
+      <h1 className="text-2xl font-bold text-left text-header-text py-2 px-8">
+        Event Aggregator
+      </h1>
     </div>
   );
 };
