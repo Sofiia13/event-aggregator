@@ -5,7 +5,7 @@ import { eventTypes } from "@/data/eventTypes";
 
 export default function Home() {
   return (
-    <div className="m-0 p-0">
+    <div className="m-0 p-0 bg-background">
       <div
         className="relative h-150 bg-cover bg-center"
         style={{ backgroundImage: "url('/lviv-bg.png')" }}
@@ -20,8 +20,12 @@ export default function Home() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {eventTypes.map((type) => (
-              <Button key={type} className="rounded-lg whitespace-nowrap">
-                {type}
+              <Button
+                key={type.name}
+                endpoint={type.endpoint}
+                className="rounded-lg whitespace-nowrap"
+              >
+                {type.name}
               </Button>
             ))}
           </div>
