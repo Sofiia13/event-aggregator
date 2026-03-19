@@ -50,4 +50,13 @@ export const mockEvents: MockEvent[] = [
     category: "Мистецтво та театр",
     image: "/exhibitionEventImg.jpeg",
   },
+
+  {
+    id: 6,
+    title: "Футбол",
+    date: "2026-04-20",
+    location: "Arena Lviv",
+    category: "Спорт",
+    image: "/football-img.jpeg",
+  },
 ];

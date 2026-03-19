@@ -8,6 +8,7 @@ type EventCardProps = {
   location: string;
   category: string;
   image: string;
+  color?: string;
 };
 
 export const EventCard = ({
@@ -16,6 +17,7 @@ export const EventCard = ({
   location,
   category,
   image,
+  color,
 }: EventCardProps) => {
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -23,6 +25,7 @@ export const EventCard = ({
     <div
       ref={divRef}
       className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm"
+      style={color ? { backgroundColor: color } : undefined}
     >
       <a href="#">
         <img

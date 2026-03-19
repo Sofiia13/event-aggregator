@@ -17,7 +17,10 @@ export const PageLayout: React.FC<Props> = ({
   bgImage,
 }) => {
   return (
-    <div className={`m-0 p-0 ${bgColor || "bg-background"}`}>
+    <div
+      className={`m-0 p-0 ${bgColor ? "" : "bg-background"}`}
+      style={bgColor ? { backgroundColor: bgColor } : undefined}
+    >
       <div
         className="relative h-150 bg-cover bg-center"
         style={{ backgroundImage: `url('${bgImage}')` }}
