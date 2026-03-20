@@ -2,6 +2,7 @@
 
 import { EventsList } from "./EventsList";
 import { Header } from "./Header";
+import { Navigation } from "./Navigation";
 
 type Props = {
   children?: React.ReactNode;
@@ -28,7 +29,9 @@ export const PageLayout: React.FC<Props> = ({
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10">
-          <Header />
+          <Header>
+            <Navigation />
+          </Header>
         </div>
         <div className="absolute top-1/2 left-1/2 w-[min(100%-2rem,900px)] -translate-x-1/2 -translate-y-1/2 text-center">
           <h1 className="text-4xl font-bold text-white">{title}</h1>
