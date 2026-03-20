@@ -1,15 +1,23 @@
 import { mockEvents } from "@/data/events";
-import { eventTypes } from "@/data/eventTypes";
+import { eventTypes, type EventCategory } from "@/data/eventTypes";
 import { EventCard } from "./EventCard";
 
-export const EventsList = () => {
+type Props = {
+  category?: EventCategory;
+};
+
+export const EventsList = ({ category }: Props) => {
   const eventColorByCategory = Object.fromEntries(
     eventTypes.map((type) => [type.name, type.color]),
   );
 
+  const filteredEvents = category
+    ? mockEvents.filter((event) => event.category === category)
+    : mockEvents;
+
   return (
     <div className="flex flex-wrap gap-6 justify-center">
-      {mockEvents.map((event) => (
+      {filteredEvents.map((event) => (
         <EventCard
           key={event.id}
           title={event.title}

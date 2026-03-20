@@ -1,5 +1,6 @@
 "use client";
 
+import type { EventCategory } from "@/data/eventTypes";
 import { EventsList } from "./EventsList";
 import { Header } from "./Header";
 import { Navigation } from "./Navigation";
@@ -7,6 +8,7 @@ import { Navigation } from "./Navigation";
 type Props = {
   children?: React.ReactNode;
   title: string;
+  category?: EventCategory;
   bgColor?: string;
   bgImage?: string;
 };
@@ -14,6 +16,7 @@ type Props = {
 export const PageLayout: React.FC<Props> = ({
   children,
   title,
+  category,
   bgColor,
   bgImage,
 }) => {
@@ -39,9 +42,9 @@ export const PageLayout: React.FC<Props> = ({
       </div>
 
       <main className="text-foreground container mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold mb-6">Найближчі події у Львові</h2>
+        <h2 className="text-2xl font-bold mb-6">Події у Львові</h2>
 
-        <EventsList />
+        <EventsList category={category} />
       </main>
       {children}
     </div>
